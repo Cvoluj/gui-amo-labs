@@ -1,0 +1,55 @@
+QDialog {
+    background-color: #ffffff; /* Зміна кольору фону на білий */
+    border: 1px solid #e0e0e0; /* Зміна кольору рамки на білий відтінок */
+    border-radius: 10px; /* Округлення кутів */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Тінь */
+}
+
+QWidget {
+    background-color: #ffffff; /* Зміна кольору фону на білий */
+    color: #333333; /* Зміна кольору тексту на темно-сірий */
+    font-family: 'Segoe UI', sans-serif; 
+}
+
+QTextEdit {
+    background-color: #f8f8f8; /* Повернення колір вікна редагування на вихідний */
+    border: 2px solid #e0e0e0; /* Зміна кольору рамки на білий відтінок */
+    padding: 8px;
+    font-size: 14px; /* Збільшення розміру шрифту */
+    border-radius: 5px;
+}
+
+QLabel {
+    font-weight: bold;
+    color: #666666; /* Зміна кольору тексту на темно-сірий */
+}
+
+QListWidget {
+    border: 2px solid #e0e0e0; /* Зміна кольору рамки на білий відтінок */
+    padding: 8px;
+    font-size: 14px; /* Збільшення розміру шрифту */
+    border-radius: 5px;
+}
+
+QListWidget::item {
+    padding: 4px;
+}
+
+QPushButton {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 16px; /* Збільшення розміру кнопки */
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px; /* Збільшення розміру шрифту */
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease; /* Плавна анімація зміни кольору фону */
+}
+
+QPushButton:hover {
+    background-color: #45a049; /* Зміна кольору фону при наведенні курсору */
+}
