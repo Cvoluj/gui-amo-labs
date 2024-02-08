@@ -1,8 +1,8 @@
 import os
-from typing import Union
-from PyQt5.QtCore import QFile, QTextStream
-from PyQt5.QtGui import QDragEnterEvent, QDropEvent
-from PyQt5.QtWidgets import QMainWindow, QTextEdit
+from typing import Union, List
+from PyQt5.QtCore import QFile, QTextStream, Qt, QMimeData
+from PyQt5.QtGui import QDragEnterEvent, QDropEvent, QDrag
+from PyQt5.QtWidgets import QMainWindow, QTextEdit, QWidget, QLabel, QLineEdit, QVBoxLayout, QTextEdit
 
 class MainWindowStyle(QMainWindow):
     def __init__(self, *args, **kwargs):
@@ -15,16 +15,12 @@ class MainWindowStyle(QMainWindow):
             print(f"Could not open stylesheet file {filename}")
             return
 
-        # Read the QSS content and apply it to the application
         stream = QTextStream(style_file)
         self.setStyleSheet(stream.readAll())
         style_file.close()
 
-
-class DnDQTextEdit(QTextEdit):
-
+class DnDMixin():
     def __init__(self):
-        super().__init__()
         self.readedFileText = str()
 
     def dragEnterEvent(self, a0: QDragEnterEvent | None) -> None:
@@ -46,5 +42,12 @@ class DnDQTextEdit(QTextEdit):
                 print(f"Error reading file {file_path}: {e}")
 
 
+class DnDQTextEdit(QTextEdit, DnDMixin):
+
+    def __init__(self):
+        super().__init__()
+
     def pasteReadedFile(self):
+        print(self.readedFileText)
         self.setText('\n'.join(self.readedFileText))
+

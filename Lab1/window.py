@@ -3,6 +3,7 @@ from PyQt5.QtGui import QDragEnterEvent, QDropEvent
 from PyQt5.QtWidgets import QApplication, QWidget, QVBoxLayout, QPushButton, QLabel, QLineEdit, QTextEdit, QCheckBox, QRadioButton, QComboBox, QMainWindow
 from PyQt5.QtCore import QFile, QTextStream, QVariant
 from abstract import MainWindowStyle, DnDQTextEdit
+from doubleLineWidget import doubleLineWidget
 
 
 class MainWindow(MainWindowStyle):
@@ -22,6 +23,8 @@ class MainWindow(MainWindowStyle):
         combo_box = QComboBox()
         combo_box.addItems(['Option 1', 'Option 2', 'Option 3'])
 
+        custom_widget = doubleLineWidget('Name1', 'Name2')
+
         self.layout.addWidget(button)
         self.layout.addWidget(label)
         self.layout.addWidget(line_edit)
@@ -29,6 +32,8 @@ class MainWindow(MainWindowStyle):
         self.layout.addWidget(checkbox)
         self.layout.addWidget(radio_button)
         self.layout.addWidget(combo_box)
+
+        self.layout.addWidget(custom_widget)
 
         central_widget = QWidget()
         central_widget.setLayout(self.layout)
