@@ -2,7 +2,6 @@ QDialog {
     background-color: #ffffff; /* Зміна кольору фону на білий */
     border: 1px solid #e0e0e0; /* Зміна кольору рамки на білий відтінок */
     border-radius: 10px; /* Округлення кутів */
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Тінь */
 }
 
 QWidget {
@@ -15,19 +14,20 @@ QTextEdit {
     background-color: #f8f8f8; /* Повернення колір вікна редагування на вихідний */
     border: 2px solid #e0e0e0; /* Зміна кольору рамки на білий відтінок */
     padding: 8px;
-    font-size: 14px; /* Збільшення розміру шрифту */
+    font-size: 18px; /* Збільшення розміру шрифту */
     border-radius: 5px;
 }
 
 QLabel {
     font-weight: bold;
     color: #666666; /* Зміна кольору тексту на темно-сірий */
+    font-size: 16px;
 }
 
 QListWidget {
     border: 2px solid #e0e0e0; /* Зміна кольору рамки на білий відтінок */
     padding: 8px;
-    font-size: 14px; /* Збільшення розміру шрифту */
+    font-size: 18px; /* Збільшення розміру шрифту */
     border-radius: 5px;
 }
 
@@ -42,14 +42,32 @@ QPushButton {
     padding: 10px 16px; /* Збільшення розміру кнопки */
     text-align: center;
     text-decoration: none;
-    display: inline-block;
     font-size: 14px; /* Збільшення розміру шрифту */
     margin: 4px 2px;
-    cursor: pointer;
     border-radius: 4px;
-    transition: background-color 0.3s ease; /* Плавна анімація зміни кольору фону */
 }
 
 QPushButton:hover {
     background-color: #45a049; /* Зміна кольору фону при наведенні курсору */
 }
+
+#StudentInfo {
+    background-color: #f0f0f0; /* Light grey background */
+    color: #333333; /* Dark grey text */
+    font-family: 'Times New Roman', sans-serif;
+    border: 1px solid #cccccc; /* Light grey border */
+    border-radius: 10px; /* Rounded corners */
+    padding: 20px; /* Add some padding */
+}
+
+#StudentInfo QLabel {
+    font-size: 19px; /* Smaller font size */
+    font-weight: bold; /* Bold font */
+    color: #555555; /* Dark grey text */
+    margin-bottom: 5px; /* Reduced bottom margin */
+}
+
+#StudentInfo QLabel#titleLabel {
+    font-size: 24px; /* Larger title font size */
+    color: #336699; /* Dark blue title */
+}    
