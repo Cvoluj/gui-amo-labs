@@ -7,4 +7,7 @@ Download .exe or do it by your own
 pip install requirements.txt
 python <path>/window.py
 ```
-
+Generate onefile executable
+```
+pyinstaller --onefile --windowed --name=lab1 --add-data="Lab1/*.py;." --hidden-import="mimetypes" --hidden-import="pyqt5" Lab1/window.py
+```
