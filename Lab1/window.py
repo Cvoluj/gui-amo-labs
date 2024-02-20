@@ -1,10 +1,10 @@
 import sys
-from PyQt5.QtGui import QDragEnterEvent, QDropEvent
-from PyQt5.QtWidgets import QApplication, QWidget, QVBoxLayout, QPushButton, QLabel, QLineEdit, QTextEdit, QCheckBox, QRadioButton, QComboBox, QMainWindow, QHBoxLayout
+from PyQt5.QtWidgets import QApplication, QWidget, QVBoxLayout, QPushButton, QHBoxLayout
 
-from abstract import MainWindowStyle, DnDQTextEdit
-from doubleLineWidget import dobuleLineWindow
+from abstract import MainWindowStyle
+from dynamicLineWidget import dynamicLineWindow
 from studentInfo import StudentInfo
+import functions
 
 
 class MainWindow(MainWindowStyle):
@@ -14,7 +14,7 @@ class MainWindow(MainWindowStyle):
 
 
     def initUI(self):
-        self.tasks = [self.open_task1, self.open_task2, self.open_tesk3]
+        self.tasks = [self.open_task1, self.open_task2, self.open_task3]
         self.setGeometry(100, 100, 200, 200)
         self.setWindowTitle('AMO Lab1')
 
@@ -40,29 +40,26 @@ class MainWindow(MainWindowStyle):
         self.setCentralWidget(central_widget)
     
     def open_task1(self):
-        self.task1_window = dobuleLineWindow("Task1", *['Значення а:', 'Значення b:'])
-        self.task1_window.addCalculateButtonAction(task1)
+        self.task1_window = dynamicLineWindow("Task1", *['Значення а:', 'Значення c:'])
+        self.task1_window.algorithm_label.setText('Y1=sqrt(a + c) + 1 / (a + c)')
+        self.task1_window.addCalculateButtonAction(functions.calculate_y1)
+        
         self.task1_window.show()
 
     def open_task2(self):
-        self.task2_window = dobuleLineWindow("Task2")
-        self.task2_window.addCalculateButtonAction(task2)
+        self.task2_window = dynamicLineWindow("Task2")
+        self.task2_window.instructions.setText('1. Натисніть Calculate')
+        self.task2_window.algorithm_label.setText('57.567x^2 - 11.675x - 34.114 = 0')
+        self.task2_window.btn_load_file.setVisible(False)
+        self.task2_window.addCalculateButtonAction(functions.find_roots)
         self.task2_window.show()
-        pass
-    def open_tesk3(self):
-        self.task3_window = dobuleLineWindow("Task3")
-        self.task3_window.addCalculateButtonAction(task3)
-        self.task3_window.show()
-
-def task1():
-    print('3')
-
-def task2():
-    print('4')
-    
-def task3():
-    print('5')
         
+    def open_task3(self):
+        self.task3_window = dynamicLineWindow("Task3", *['Значення а:', 'Значення c:', 'значення g:'])
+        self.task3_window.algorithm_label.setText('f = sum[i=0, 10](ai^2 + 56ci*f*gi)')
+        self.task3_window.addCalculateButtonAction(functions.calculate_f)
+
+        self.task3_window.show()
 
     
 

@@ -1,9 +1,7 @@
 import mimetypes
-import os
-from typing import Union, List
-from PyQt5.QtCore import QFile, QTextStream, Qt, QMimeData
-from PyQt5.QtGui import QDragEnterEvent, QDropEvent, QDrag
-from PyQt5.QtWidgets import QMainWindow, QTextEdit, QWidget, QLabel, QLineEdit, QVBoxLayout, QTextEdit, QPushButton, QFileDialog, QMessageBox
+from PyQt5.QtCore import QFile, QTextStream
+from PyQt5.QtGui import QDragEnterEvent
+from PyQt5.QtWidgets import QMainWindow, QTextEdit, QTextEdit, QPushButton, QFileDialog, QMessageBox
 
 
 class MainWindowStyle(QMainWindow):
@@ -61,6 +59,7 @@ class DnDQTextEdit(QTextEdit, DnDMixin):
 class UploadFileButton(QPushButton):
     def __init__(self):
         super().__init__()
+        self.setText
         self.setText('⭳')
         self.setToolTip('Click to load a file')
         self.readedFileText = str()
@@ -78,8 +77,14 @@ class UploadFileButton(QPushButton):
         file_dialog.setFileMode(QFileDialog.ExistingFile)
         file_dialog.setNameFilter("Text files (*.txt *.csv);;All files (*)")
 
+       
+        
         if file_dialog.exec_():
             file_paths = file_dialog.selectedFiles()
+            
+            if not file_paths:
+                return
+            
             for file_path in file_paths:
                 try:
                     if self.is_text_file(file_path):
