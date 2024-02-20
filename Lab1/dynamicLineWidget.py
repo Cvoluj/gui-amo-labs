@@ -1,5 +1,5 @@
 from PyQt5.QtWidgets import QWidget, QVBoxLayout, QLabel, QLineEdit, QPushButton, QHBoxLayout, QSizePolicy, QMessageBox
-from PyQt5 import Qt
+from PyQt5.QtCore import Qt
 from functions import CalculationError
 
 from abstract import MainWindowStyle, DnDMixin, UploadFileButton
@@ -32,7 +32,7 @@ class dynamicLineWidget(QWidget, DnDMixin):
         btn_layout.addWidget(self.btn_calculate)
 
         self.algorithm_label = QLabel("Your Algorithm")
-        self.algorithm_label.setAlignment(Qt.Qt.AlignCenter)
+        self.algorithm_label.setAlignment(Qt.AlignCenter)
 
         layout.addWidget(self.instructions)
         layout.addLayout(btn_layout)

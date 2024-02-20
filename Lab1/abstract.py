@@ -1,23 +1,15 @@
 import mimetypes
-from PyQt5.QtCore import QFile, QTextStream
 from PyQt5.QtGui import QDragEnterEvent
 from PyQt5.QtWidgets import QMainWindow, QTextEdit, QTextEdit, QPushButton, QFileDialog, QMessageBox
-
+from design import DESIGN_QSS
 
 class MainWindowStyle(QMainWindow):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.load_stylesheet('design.qss')
+        self.load_stylesheet(DESIGN_QSS)
 
     def load_stylesheet(self, filename):
-        style_file = QFile(filename)
-        if not style_file.open(QFile.ReadOnly | QFile.Text):
-            print(f"Could not open stylesheet file {filename}")
-            return
-
-        stream = QTextStream(style_file)
-        self.setStyleSheet(stream.readAll())
-        style_file.close()
+        self.setStyleSheet(filename)
 
 
 class DnDMixin():

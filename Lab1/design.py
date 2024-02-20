@@ -1,3 +1,4 @@
+DESIGN_QSS = """
 QDialog {
     background-color: #ffffff; /* Зміна кольору фону на білий */
     border: 1px solid #e0e0e0; /* Зміна кольору рамки на білий відтінок */
@@ -74,3 +75,4 @@ QLineEdit {
     font-size: 24px; /* Larger title font size */
     color: #336699; /* Dark blue title */
 }    
+"""
