@@ -3,13 +3,13 @@ This repository for my lab works, but I also try to use here interesting feature
 
 # Key Components
 
-## 1. Drag and Drop File Handling:
+### 1. Drag and Drop File Handling:
 
-* The `DnDMixin` class and `DnDQTextEdit` subclass provide functionality to drag and drop files for easy data input.
-* The `UploadFileButton` class facilitates file upload with error handling for unsupported file types or empty rows.
-## 2. Signals
+   * The `DnDMixin` class and `DnDQTextEdit` subclass provide functionality to drag and drop files for easy data input.
+   * The `UploadFileButton` class facilitates file upload with error handling for unsupported file types or empty rows.
+### 2. Signals
 
-* Actively using `pyqtSignal` for updating plots for new data
+   * Actively using `pyqtSignal` for updating plots for new data
 
 
 # Installing
