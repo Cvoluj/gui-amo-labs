@@ -1,10 +1,19 @@
 # AMO Lab works
-This repository for my lab works, but I also try to use here best practices and features, like Drag'n'Drop, etc.
+This repository for my lab works, but I also try to use here interesting features, for example Drag'n'Drop.
 
-**UPD:** in small amount of free time this labs can look little scary**
+# Key Components
+
+## 1. Drag and Drop File Handling:
+
+* The `DnDMixin` class and `DnDQTextEdit` subclass provide functionality to drag and drop files for easy data input.
+* The `UploadFileButton` class facilitates file upload with error handling for unsupported file types or empty rows.
+## 2. Signals
+
+* Actively using `pyqtSignal` for updating plots for new data
+
 
 # Installing
-Download .exe or do it by your own
+Use pyinstaller for generating .exe files or run `window.py`
 ```
 pip install requirements.txt
 python <path>/window.py
